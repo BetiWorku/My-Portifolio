@@ -3,23 +3,34 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 
-// Import images (optional but recommended for better bundling & type safety)
-// You can skip imports and use paths directly if you prefer
-// import AndroidCert from '@/assets/Android Development.png';
-// import DataAnalysisCert from '@/assets/Data Analaysis Development.png';
-// import ProgrammingCert from '@/assets/Programing Fundamentals.png';
-
 interface Certificate {
   title: string;
   issuer: string;
   date: string;
   credentialUrl?: string;
   description?: string;
-  certificateImage: string;   // now required since you provided all three
+  certificateImage: string;
 }
 
 const Certificates = () => {
   const certificates: Certificate[] = [
+    {
+      title: 'Python Pro Hackathon - 3rd Place',
+      issuer: 'TechTonic Tribe & Debre Berhan University',
+      date: 'August 18, 2024',
+      description:
+        'Awarded for remarkable ingenuity, outstanding technical prowess, and collaborative spirit demonstrated throughout the Python Pro Hackathon.',
+      certificateImage: '/src/assets/Hackathon certificate.jpg',
+    },
+    {
+      title: 'Introduction to Cybersecurity Awareness',
+      issuer: 'HP LIFE Foundation',
+      date: 'September 8, 2024',
+      description:
+        'Completed training on identifying common cybersecurity threats and implementing basic methods to secure online data.',
+      credentialUrl: 'https://www.life-global.org/certificate/d06a53a2-700c-409b-8580-a5b97e54dd08',
+      certificateImage: '/src/assets/certificate_page-0001.jpg',
+    },
     {
       title: 'Android Developer Fundamentals',
       issuer: 'Udacity',
@@ -28,7 +39,6 @@ const Certificates = () => {
         'Verified completion of the Android Developer Fundamentals program covering Android app basics, UI, and lifecycle.',
       credentialUrl: 'https://confirm.udacity.com/SF3ZSL45',
       certificateImage: '/src/assets/Android Development.png',
-      // certificateImage: AndroidCert,   // ← alternative if you use imports above
     },
     {
       title: 'Data Analysis Fundamentals',
@@ -38,7 +48,6 @@ const Certificates = () => {
         'Verified completion of the Data Analysis Fundamentals program focused on data cleaning, inspection, and visualization.',
       credentialUrl: 'https://confirm.udacity.com/FVUR6SKP',
       certificateImage: '/src/assets/Data Analaysis Development.png',
-      // certificateImage: DataAnalysisCert,
     },
     {
       title: 'Programming Fundamentals',
@@ -48,7 +57,6 @@ const Certificates = () => {
         'Verified completion of the Programming Fundamentals program covering core programming concepts and problem solving.',
       credentialUrl: 'https://confirm.udacity.com/RZX6XN23',
       certificateImage: '/src/assets/Programming Fundamentals.png',
-      // certificateImage: ProgrammingCert,
     },
   ];
 
@@ -97,7 +105,6 @@ const Certificates = () => {
                   </p>
                 )}
 
-                {/* Click → shows certificate image in modal */}
                 <div className="pt-4">
                   <Dialog>
                     <DialogTrigger asChild>
@@ -135,7 +142,7 @@ const Certificates = () => {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 text-primary hover:underline text-sm sm:text-base"
                           >
-                            Verify this certificate on Udacity
+                            Verify on {cert.issuer.includes('HP') ? 'HP LIFE' : 'Udacity'}
                             <ExternalLink size={16} />
                           </a>
                         </div>
@@ -148,8 +155,8 @@ const Certificates = () => {
           ))}
         </div>
 
-        {/* More coming soon */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        {/* Coming Soon Section */}
+        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <Card className="max-w-md mx-auto border-dashed border-2 border-border/50 bg-transparent">
             <CardContent className="p-8">
               <Award size={48} className="mx-auto mb-4 text-muted-foreground/50" />
