@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  ArrowRight,
-  Award,
-  Bot,
-  Code2,
-  CheckCircle2,
-  ArrowDown,
-} from "lucide-react";
+import { ArrowRight, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import betiImage from "../assets/profile.jpg";
 
@@ -163,65 +156,10 @@ const Index = () => {
                     />
                   </div>
                 </div>
-
-                {/* Floating Badge: Top Right */}
-                <div
-                  className="absolute -top-2 -right-1 sm:top-2 sm:-right-3 bg-card/95 backdrop-blur-md border border-secondary/40 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 animate-bounce"
-                  style={{ animationDuration: "4.5s" }}
-                >
-                  <div className="w-7 h-7 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary">
-                    <Bot size={15} />
-                  </div>
-                  <div>
-                    <p className="text-[9px] uppercase font-bold text-secondary tracking-wider">
-                      Leadership
-                    </p>
-                    <p className="text-xs font-semibold text-foreground">
-                      AI/ML Team Lead
-                    </p>
-                  </div>
-                </div>
-
-                {/* Floating Badge: Bottom Left */}
-                <div
-                  className="absolute -bottom-3 -left-1 sm:bottom-3 sm:-left-4 bg-card/95 backdrop-blur-md border border-primary/40 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 animate-bounce"
-                  style={{ animationDuration: "5.5s" }}
-                >
-                  <div className="w-7 h-7 rounded-lg bg-primary/15 flex items-center justify-center text-primary">
-                    <Code2 size={15} />
-                  </div>
-                  <div>
-                    <p className="text-[9px] uppercase font-bold text-primary tracking-wider">
-                      Expertise
-                    </p>
-                    <p className="text-xs font-semibold text-foreground">
-                      Full-Stack & UI/UX
-                    </p>
-                  </div>
-                </div>
-
-                <div className="hidden sm:flex absolute bottom-0 right-1 bg-background/90 backdrop-blur-md border border-border/70 px-2.5 py-1 rounded-full shadow-sm items-center gap-1.5 text-[11px] text-muted-foreground">
-                  <CheckCircle2 size={13} className="text-emerald-500" />
-                  <span>Modern Clean Code</span>
-                </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Scroll Down Indicator */}
-        <button
-          onClick={() => scrollTo("about")}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground/60 hover:text-secondary transition-colors cursor-pointer group"
-        >
-          <span className="text-[10px] uppercase font-semibold tracking-widest">
-            Scroll Down
-          </span>
-          <ArrowDown
-            size={18}
-            className="animate-bounce group-hover:text-secondary"
-          />
-        </button>
 
         {/* Background Decorative Blur Orbs */}
         <div className="pointer-events-none absolute -top-16 -right-16 w-80 h-80 bg-secondary/15 rounded-full blur-[90px]" />
